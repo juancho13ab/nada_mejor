@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html"><img src="img/logo.png" alt="Logo Natación" id="nav-logo"></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="nosotros.html" class="nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="torneos.html" class="nav-link"><i class="fas fa-trophy"></i> Torneos</a></li>
+            <li><a href="inscripciones.html" class="nav-link"><i class="fas fa-edit"></i> Inscripciones</a></li>
+            <li><a href="resultados.html" class="nav-link"><i class="fas fa-chart-line"></i> Resultados</a></li>
+            <li><a href="noticia.html" class="nav-link"><i class="fas fa-newspaper"></i> Noticias</a></li>
+            <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de Contacto -->
+    <section class="contact-section">
+        <h1>Contacto</h1>
+        <div class="contact-container">
+            <div class="contact-box">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.936661726308!2d-75.28189082573555!3d2.927303396569929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a1b1b1b1b1%3A0x0!2sFET%20Fundaci%C3%B3n%20Escuela%20Tecnol%C3%B3gica%20De%20Neiva%20%22Jes%C3%BAs%20Oviedo%20Perez%22!5e0!3m2!1ses!2sco!4v1633640441234!5m2!1ses!2sco" style="border:0; height: 100%;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <p>© 2024 Página de Natación - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Script para toggle del menú en dispositivos móviles
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuIcon = document.getElementById('menu-icon');
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('rotate');
+        }
+
+        // Validación del formulario de contacto
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            if (!nombre || !email || !mensaje) {
+                alert('Por favor, complete todos los campos.');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
