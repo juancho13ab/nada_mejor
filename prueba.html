@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción Torneo de Natación Profesional</title>
+    <link rel="stylesheet" href="css/prueba.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html"><img src="img/logo.png" alt="Logo Natación" id="nav-logo"></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="nosotros.html" class="nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="torneos.html" class="nav-link"><i class="fas fa-trophy"></i> Torneos</a></li>
+            <li><a href="inscripciones.html" class="nav-link"><i class="fas fa-edit"></i> Inscripciones</a></li>
+            <li><a href="resultados.html" class="nav-link"><i class="fas fa-chart-line"></i> Resultados</a></li>
+            <li><a href="noticia.html" class="nav-link"><i class="fas fa-newspaper"></i> Noticias</a></li>
+            <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="form-section">
+            <div class="form-container">
+                <h2>Formulario de Inscripción</h2>
+                <form id="formulario-inscripcion" action="procesar_inscripcion.php" method="post" enctype="multipart/form-data">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+                    <label for="documento">Documento de Identidad:</label>
+                    <input type="text" id="documento" name="documento" placeholder="Número de documento" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+                    <label for="telefono">Teléfono de Contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Seleccione su género</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                    <label for="comprobante_fedna">Comprobante de Afiliación a la FEDNA:</label>
+                    <input type="file" id="comprobante_fedna" name="comprobante_fedna" accept=".pdf,.jpg,.png" required>
+
+                    <label for="club">Club de Natación:</label>
+                    <input type="text" id="club" name="club" placeholder="Nombre del club" required>
+
+                    <label for="certificado_medico">Certificado Médico:</label>
+                    <input type="file" id="certificado_medico" name="certificado_medico" accept=".pdf,.jpg,.png" required>
+
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Seleccione una categoría</option>
+                        <optgroup label="Categorías Juveniles (11-17 años)">
+                            <option value="juvenil_a">Juvenil A (11-12 años)</option>
+                            <option value="juvenil_b">Juvenil B (13-14 años)</option>
+                            <option value="juvenil_c">Juvenil C (15-17 años)</option>
+                        </optgroup>
+                        <optgroup label="Categorías Absolutas (18 años en adelante)">
+                            <option value="absoluto_amateur">Absoluto Amateur</option>
+                            <option value="absoluto_profesional">Absoluto Profesional</option>
+                        </optgroup>
+                        <optgroup label="Categorías Master (25 años en adelante)">
+                            <option value="master_25_34">Master 25-34 años</option>
+                            <option value="master_35_44">Master 35-44 años</option>
+                            <option value="master_45_mas">Master 45 años o más</option>
+                        </optgroup>
+                    </select>
+
+                    <label for="pruebas">Pruebas en las que Competirá:</label>
+                    <textarea id="pruebas" name="pruebas" placeholder="Ingrese las pruebas (ejemplo: 100m libre, 200m mariposa)" rows="4" required></textarea>
+
+                    <button type="submit">Enviar Inscripción</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Script para toggle del menú en dispositivos móviles -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuIcon = document.getElementById('menu-icon');
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>

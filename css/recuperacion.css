@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ...existing code... */
+
+nav {
+    background-color: #1e90ff; /* Azul Dodger */
+    padding: 1em;  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 75px; 
+}
+
+.nav-logo img.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2em; /* Aumentar el tamaño del icono */
+    color: white;
+    transition: transform 0.5s ease; /* Animación al volver a su posición original */
+}
+
+.menu-toggle.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+.recuperacion {
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    padding: 2em;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #1e8fff40; /* Azul Dodger */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.recuperacion h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.recuperacion p {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.recuperacion form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.recuperacion label {
+    color: white;
+    font-size: 1em;
+}
+
+.recuperacion input {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #1e90ff; /* Azul Dodger */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.recuperacion button {
+    background-color: white;
+    color: #1e90ff; /* Azul Dodger */
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recuperacion button:hover {
+    background-color: #4682b4; /* Azul acero */
+    color: white;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: #1e90ff; /* Azul Dodger */
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-logo {
+        margin-bottom: 1em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative; /* Asegura que el menú aparezca dentro del nav */
+        top: 0;
+        left: 0;
+        background-color: #1e90ff; /* Azul Dodger */
+        z-index: 1; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

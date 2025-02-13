@@ -1,0 +1,198 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #1e90ff; /* Azul Dodger */
+    padding: 1em;  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 75px; 
+}
+
+.nav-logo img.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2em; /* Aumentar el tamaño del icono */
+    color: white;
+    transition: transform 0.5s ease; /* Animación al volver a su posición original */
+}
+
+.menu-toggle.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #1e90ff; /* Azul Dodger */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.form-section {
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    padding: 2em;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #1e8fff40; /* Azul Dodger */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto; /* Centrar el formulario */
+}
+
+.form-container h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-container label {
+    color: white;
+    font-size: 1em;
+    text-align: left;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 0.75em; /* Aumentar el padding */
+    font-size: 1em;
+    border: 1px solid #1e90ff; /* Azul Dodger */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    border-color: #1e90ff; /* Borde azul Dodger al enfocar */
+    outline: none; /* Eliminar el borde de enfoque predeterminado */
+    box-shadow: 0 0 5px rgba(30, 144, 255, 0.5); /* Sombra azul Dodger */
+}
+
+.form-container button {
+    background-color: white;
+    color: #1e90ff; /* Azul Dodger */
+    padding: 0.75em 1.5em; /* Aumentar el padding */
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.form-container button:hover {
+    background-color: #4682b4; /* Azul acero */
+    color: white;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-logo {
+        margin-bottom: 1em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative; /* Asegura que el menú aparezca dentro del nav */
+        top: 0;
+        left: 0;
+        background-color: #1e90ff; /* Azul Dodger */
+        z-index: 1; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .form-container {
+        padding: 1em;
+        max-width: 90%; /* Ajustar el ancho máximo en dispositivos móviles */
+    }
+
+    .form-container h2 {
+        font-size: 1.5em;
+    }
+
+    .form-container label {
+        font-size: 0.9em;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        font-size: 0.9em;
+    }
+
+    .form-container button {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 1em 0.5em; /* Ajustar el padding en dispositivos móviles */
+        font-size: 0.9em; /* Ajustar el tamaño de fuente en dispositivos móviles */
+    }
+}

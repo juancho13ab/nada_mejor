@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e90ff; /* Azul Dodger */
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.nav-logo img {
+    width: 75px;
+}
+
+.nav-logo img.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffeb3b; /* Amarillo */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.menu-toggle.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+.about-us {
+    padding: 2em;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 2em auto;
+    max-width: 800px;
+}
+
+.about-us .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us h1 {
+    color: #1e90ff; /* Azul Dodger */
+    margin-bottom: 1em;
+}
+
+.about-us .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-us .content .image {
+    margin-bottom: 1em;
+}
+
+.about-us .content .image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.about-us .content .text {
+    color: #333; /* Texto negro */
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.mission, .vision {
+    background-color: white; /* Fondo blanco */
+    color: #333; /* Texto negro */
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el texto */
+}
+
+.mission h2, .vision h2 {
+    color: #1e90ff; /* Azul Dodger */
+    margin-top: 0;
+    text-align: center;
+}
+
+.mission p, .vision p {
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #1e90ff; /* Azul Dodger */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-logo {
+        margin-bottom: 1em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative; /* Asegura que el menú aparezca dentro del nav */
+        top: 0;
+        left: 0;
+        background-color: #1e90ff; /* Azul Dodger */
+        z-index: 1; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .about-us {
+        padding: 1em;
+        margin: 1em;
+    }
+
+    .about-us .content {
+        flex-direction: column;
+    }
+
+    .mission, .vision {
+        padding: 1em;
+        margin: 1em;
+    }
+}

@@ -1,0 +1,327 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+}
+
+.content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+nav {
+    background-color: #1e90ff; /* Azul Dodger */
+    padding: 1em;  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 75px; 
+}
+
+.nav-logo img.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #87cefa; /* Azul cielo claro */
+    color: #000080; /* Azul marino */
+    padding: 2em;
+    text-align: center;
+}
+
+.torneos {
+    background-color: #b0e0e6; /* Azul polvo */
+    padding: 2em;
+    text-align: center;
+}
+
+.torneos h2 {
+    color: #4682b4; /* Azul acero */
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.torneos p {
+    color: #000080; /* Azul marino */
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.evento {
+    background-color: #add8e6; /* Azul claro */
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center; /* Centrar el texto */
+}
+
+.evento h3 {
+    color: #1e90ff; /* Azul Dodger */
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.evento p {
+    color: #000080; /* Azul marino */
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.evento i {
+    margin-right: 0.5em;
+}
+
+footer {
+    background-color: #1e90ff; /* Azul Dodger */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #1e90ff; /* Azul Dodger */
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height:100%    /*ustar el tamaño del carrusel */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: none;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajustar la imagen al contenedor sin deformarla */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border-radius: 50%;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+    text-align: center;
+    padding: 10px;
+    background: #ddd;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: #717171;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2em; /* Aumentar el tamaño del icono */
+    color: white;
+    transition: transform 0.5s ease; /* Animación al volver a su posición original */
+}
+
+.menu-toggle.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+.ingreso {
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    padding: 2em;
+    text-align: center;
+}
+
+.form-container {
+    background-color: #1e8fff40; /* Azul Dodger */
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.ingreso h2 {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.ingreso p {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.ingreso form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.ingreso label {
+    color: white;
+    font-size: 1em;
+}
+
+.ingreso input {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #1e90ff; /* Azul Dodger */
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.ingreso button {
+    background-color: white;
+    color: #1e90ff; /* Azul Dodger */
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ingreso button:hover {
+    background-color: #4682b4; /* Azul acero */
+    color: white;
+}
+
+.links {
+    margin-top: 1em;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 2em;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-logo {
+        margin-bottom: 1em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative; /* Asegura que el menú aparezca dentro del nav */
+        top: 0;
+        left: 0;
+        background-color: #1e90ff; /* Azul Dodger */
+        z-index: 1; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}

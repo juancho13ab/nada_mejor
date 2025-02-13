@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: rgb(135, 206, 250); /* Fondo azul cielo claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #1e90ff; /* Azul Dodger */
+    padding: 1em;  
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 75px; 
+}
+
+.nav-logo img.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    margin-left: auto;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #1e90ff; /* Azul Dodger */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: auto;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 2em; /* Aumentar el tamaño del icono */
+    color: white;
+    transition: transform 0.5s ease; /* Animación al volver a su posición original */
+}
+
+.menu-toggle.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-logo {
+        margin-bottom: 1em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: relative; /* Asegura que el menú aparezca dentro del nav */
+        top: 0;
+        left: 0;
+        background-color: #1e90ff; /* Azul Dodger */
+        z-index: 1; /* Asegura que el menú aparezca sobre otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+header {
+    background-color: rgb(135, 206, 250);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.filter-input, .filter-select, .filter-date {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+    background-color: white; /* Fondo blanco para los cuadros */
+    color: #333; /* Color del texto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+.tournament-list {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Reducir el espacio entre las filas */
+    margin-top: 2rem; /* Añadir más espacio en la parte superior */
+    font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+}
+
+.tournament-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: table-row;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.tournament-item:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tournament-item h3, .tournament-item p, .tournament-item a {
+    display: table-cell;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tournament-item h3 {
+    font-weight: bold;
+}
+
+.tournament-item a {
+    text-align: center;
+}
+
+.tournament-item:hover {
+    background-color: #f0f8ff;
+}
+
+.tournament-item h3 {
+    margin: 0 0 0.5rem;
+    color: #6dbefb;
+}
+
+.tournament-item p {
+    margin: 0.2rem 0;
+    color: #555;
+}
+
+.view-results {
+    background-color: #1e90ff; /* Cambiar a azul Dodger */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.view-results:hover {
+    background-color: #1c86ee; /* Azul Dodger más oscuro */
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: row; /* Cambiar a fila */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        gap: 0.5rem;
+        justify-content: center; /* Centrar los filtros horizontalmente */
+    }
+
+    .filter-input, .filter-select, .filter-date {
+        flex: 1 1 30%; /* Permitir que los filtros se ajusten y ocupen el 30% del ancho */
+        max-width: none; /* Eliminar el ancho máximo */
+    }
+
+    .tournament-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .view-results {
+        margin-top: 1rem;
+        align-self: center;
+    }
+}
+
+.tournament-list th, .tournament-list td {
+    border: 1px solid #ddd;
+    padding: 0.9px; /* Reducir aún más el padding */
+    text-align: left;
+    background-color: white; /* Fondo blanco para celdas */
+    width: 30%; /* Mantener el ancho de las celdas */
+}
+
+.tournament-list th {
+    background-color: #6dbefb;
+    color: white;
+    font-weight: bold;
+}
+
+.tournament-list tr {
+    background-color: white; /* Fondo blanco para filas */
+}
+
+.tournament-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tournament-list tr:hover {
+    background-color: #ddd;
+}
+
+.tournament-list td a.view-results {
+    display: inline-block;
+    background-color: #6dbefb;
+    color: white;
+    padding: 0.5rem 1rem; /* Mantener el padding */
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1rem; /* Mantener el tamaño de la fuente */
+    text-align: center; /* Centrar el texto */
+}
+
+.tournament-list td {
+    vertical-align: middle; /* Centrar verticalmente */
+}
+
+.tournament-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+
+.tournament-date, .tournament-category {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: row; /* Cambiar a fila */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        gap: 0.5rem;
+        justify-content: center; /* Centrar los filtros horizontalmente */
+    }
+
+    .filter-input, .filter-select, .filter-date {
+        flex: 1 1 30%; /* Permitir que los filtros se ajusten y ocupen el 30% del ancho */
+        max-width: none; /* Eliminar el ancho máximo */
+    }
+
+    .tournament-list {
+        display: block; /* Cambiar a bloque para dispositivos móviles */
+        overflow-x: auto; /* Añadir desplazamiento horizontal */
+    }
+
+    .tournament-list table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .tournament-list th, .tournament-list td {
+        padding: 8px; /* Ajustar el padding */
+        text-align: left;
+        white-space: nowrap; /* Evitar que el texto se ajuste */
+    }
+
+    .tournament-item {
+        display: block; /* Cambiar a bloque para dispositivos móviles */
+        width: 100%;
+    }
+
+    .tournament-item h3, .tournament-item p, .tournament-item a {
+        display: block; /* Cambiar a bloque para dispositivos móviles */
+        width: 100%;
+        padding: 8px; /* Ajustar el padding */
+        text-align: left;
+    }
+
+    .view-results {
+        margin-top: 1rem;
+        align-self: center;
+    }
+
+    header {
+        padding: 0.5rem; /* Reducir el padding */
+    }
+
+    header h1 {
+        margin-bottom: -0.5rem; /* Reducir aún más el margen inferior */
+        font-size: 1.5rem; /* Ajustar el tamaño de la fuente */
+    }
+
+    .filters {
+        flex-direction: row; /* Cambiar a fila */
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+        gap: 0.5rem;
+        justify-content: center; /* Centrar los filtros horizontalmente */
+        margin-bottom: -0.5rem; /* Reducir aún más el margen inferior */
+    }
+
+    .filter-input, .filter-select, .filter-date {
+        flex: 1 1 30%; /* Permitir que los filtros se ajusten y ocupen el 30% del ancho */
+        max-width: none; /* Eliminar el ancho máximo */
+    }
+
+    .tournament-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .view-results {
+        margin-top: 1rem;
+        align-self: center;
+    }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Torneos</title>
+    <link rel="stylesheet" href="css/resultados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-logo">
+            <a href="index.html"><img src="img/logo.png" alt="Logo Natación" id="nav-logo"></a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="nosotros.html" class="nav-link"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="torneos.html" class="nav-link"><i class="fas fa-trophy"></i> Torneos</a></li>
+            <li><a href="inscripciones.html" class="nav-link"><i class="fas fa-edit"></i> Inscripciones</a></li>
+            <li><a href="resultados.html" class="nav-link"><i class="fas fa-chart-line"></i> Resultados</a></li>
+            <li><a href="noticia.html" class="nav-link"><i class="fas fa-newspaper"></i> Noticias</a></li>
+            <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido de Resultados -->
+    <header>
+        <h1>Resultados de Torneos</h1>
+    </header>
+    <div class="container">
+        <div class="filters">
+            <input type="text" placeholder="Buscar torneo..." class="filter-input" id="search-input">
+            <select class="filter-select" id="category-select">
+                <option value="">Filtrar por categoría</option>
+                <option value="juvenil">Juvenil</option>
+                <option value="mayores">Mayores</option>
+            </select>
+            <input type="date" class="filter-date" id="date-input">
+        </div>
+
+        <div class="tournament-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Torneo</th>
+                        <th>Fecha</th>
+                        <th>Categoría</th>
+                        <th>Resultados</th>
+                    </tr>
+                </thead>
+                <tbody id="tournament-table-body">
+                    <tr>
+                        <td>Copa Acuática 2025</td>
+                        <td>2025-01-10 al 2025-01-15</td>
+                        <td>Mayores</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Torneo Juvenil Internacional</td>
+                        <td>2025-02-20 al 2025-02-22</td>
+                        <td>Juvenil</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Maratón de Natación</td>
+                        <td>2025-03-05</td>
+                        <td>Abierta</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Campeonato Regional de Primavera</td>
+                        <td>2025-04-12 al 2025-04-14</td>
+                        <td>Juvenil</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Competencia Internacional de Verano</td>
+                        <td>2025-06-20 al 2025-06-25</td>
+                        <td>Mayores</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Torneo Nacional de Otoño</td>
+                        <td>2025-10-10 al 2025-10-12</td>
+                        <td>Abierta</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Campeonato de Invierno</td>
+                        <td>2025-12-15 al 2025-12-20</td>
+                        <td>Mayores</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Festival de Natación</td>
+                        <td>2025-11-05 al 2025-11-07</td>
+                        <td>Juvenil</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Copa Primavera</td>
+                        <td>2025-03-01 al 2025-03-03</td>
+                        <td>Juvenil</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Campeonato Nacional</td>
+                        <td>2025-04-15 al 2025-04-18</td>
+                        <td>Mayores</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Torneo de Verano</td>
+                        <td>2025-06-10 al 2025-06-12</td>
+                        <td>Abierta</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Competencia Internacional</td>
+                        <td>2025-07-20 al 2025-07-25</td>
+                        <td>Mayores</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Campeonato de Otoño</td>
+                        <td>2025-10-05 al 2025-10-07</td>
+                        <td>Juvenil</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                    <tr>
+                        <td>Copa Invierno</td>
+                        <td>2025-12-10 al 2025-12-12</td>
+                        <td>Abierta</td>
+                        <td><a href="pdf/Resultado god xd.pdf" class="view-results" target="_blank">Ver Resultados</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <p>© 2024 Página de Natación - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script para el menú en dispositivos móviles -->
+    <script>
+        // Script para toggle del menú en dispositivos móviles
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuIcon = document.getElementById('menu-icon');
+            navLinks.classList.toggle('active');
+            menuIcon.classList.toggle('rotate');
+        }
+
+        // Script para filtrar los resultados
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const categorySelect = document.getElementById('category-select');
+            const dateInput = document.getElementById('date-input');
+            const tableBody = document.getElementById('tournament-table-body');
+            const rows = Array.from(tableBody.getElementsByTagName('tr'));
+
+            function filterResults() {
+                const searchText = searchInput.value.toLowerCase();
+                const selectedCategory = categorySelect.value;
+                const selectedDate = dateInput.value;
+
+                rows.forEach(row => {
+                    const cells = row.getElementsByTagName('td');
+                    const tournamentName = cells[0].textContent.toLowerCase();
+                    const tournamentDate = cells[1].textContent;
+                    const tournamentCategory = cells[2].textContent.toLowerCase();
+
+                    const matchesSearch = tournamentName.includes(searchText);
+                    const matchesCategory = !selectedCategory || tournamentCategory.includes(selectedCategory);
+                    const matchesDate = !selectedDate || new Date(tournamentDate.split(' al ')[0]) <= new Date(selectedDate) && new Date(tournamentDate.split(' al ')[1] || tournamentDate.split(' al ')[0]) >= new Date(selectedDate);
+
+                    if (matchesSearch && matchesCategory && matchesDate) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', filterResults);
+            categorySelect.addEventListener('change', filterResults);
+            dateInput.addEventListener('input', filterResults);
+        });
+    </script>
+</body>
+</html>
